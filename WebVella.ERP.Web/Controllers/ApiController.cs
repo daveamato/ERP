@@ -3760,7 +3760,7 @@ namespace WebVella.ERP.Web.Controllers
 		public IActionResult UploadFile([FromForm] IFormFile file)
 		{
 
-			var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"').ToLowerInvariant();
+			var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.ToString().Trim('"').ToLowerInvariant();
 			DbFileRepository fsRepository = new DbFileRepository();
 			var createdFile = fsRepository.CreateTempFile(fileName, ReadFully(file.OpenReadStream()));
 
