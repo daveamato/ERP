@@ -104,7 +104,7 @@ namespace WebVella.ERP.Api
                 if (records.Count > 0)
                 {
                     var csv = new CsvWriter(textWriter);
-                    csv.Configuration.QuoteAllFields = true;
+                    csv.Configuration.ShouldQuote = (field, context) => true;
 
                     //write header
                     foreach (var prop in records[0].Properties)

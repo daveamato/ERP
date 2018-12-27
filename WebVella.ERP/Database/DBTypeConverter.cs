@@ -98,7 +98,7 @@ namespace WebVella.ERP.Database
 					pgType = NpgsqlDbType.Date;
 					break;
 				case FieldType.DateTimeField:
-					pgType = NpgsqlDbType.TimestampTZ;
+					pgType = NpgsqlDbType.TimestampTz;
 					break;
 				case FieldType.EmailField:
 					pgType = NpgsqlDbType.Varchar;
@@ -171,7 +171,7 @@ namespace WebVella.ERP.Database
 			else if (field is DbDateField)
 				pgType = NpgsqlDbType.Date;
 			else if (field is DbDateTimeField)
-				pgType = NpgsqlDbType.TimestampTZ;
+				pgType = NpgsqlDbType.TimestampTz;
 			else if (field is DbEmailField)
 				pgType = NpgsqlDbType.Varchar;
 			else if (field is DbFileField)

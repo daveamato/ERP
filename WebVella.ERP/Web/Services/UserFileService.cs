@@ -50,8 +50,7 @@ namespace WebVella.ERP.Web.Services
 			return files;
 		}
 
-		public UserFile CreateUserFile(string path = "", string alt = "",  string caption = "")
-		{
+		public UserFile CreateUserFile(string path = "", string alt = "",  string caption = "") {
 			var userFileRecord = new EntityRecord();
 			if(path.StartsWith("/fs")) {
 				path = path.Substring(3);
@@ -68,7 +67,7 @@ namespace WebVella.ERP.Web.Services
 			userFileRecord["size"] = fileKilobytes;
 			userFileRecord["name"] = Path.GetFileName(path);
 			var fileExtension = Path.GetExtension(path);
-			var mimeType = System.Web.MimeMapping.GetMimeMapping(path);
+			var mimeType = MimeMapping.GetMimeMapping(path);
 			if(mimeType.StartsWith("image")) {
 				var dimensionsRecord = Helpers.GetImageDimension(tempFile.GetBytes());
 				userFileRecord["width"] = (decimal)dimensionsRecord["width"];

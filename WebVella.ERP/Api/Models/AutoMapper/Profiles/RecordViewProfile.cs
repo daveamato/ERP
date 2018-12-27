@@ -178,10 +178,10 @@ namespace WebVella.ERP.Api.Models.AutoMapper.Profiles
                 .Include<RecordViewSidebarRelationListItem, DbRecordViewSidebarRelationListItem>()
                 .Include<RecordViewSidebarRelationViewItem, DbRecordViewSidebarRelationViewItem>()
                 .Include<RecordViewSidebarRelationTreeItem, DbRecordViewSidebarRelationTreeItem>()
-                .ForSourceMember(x => x.DataName, opt => opt.Ignore())
-                .ForSourceMember(x => x.EntityLabel, opt => opt.Ignore())
-                .ForSourceMember(x => x.EntityName, opt => opt.Ignore())
-                .ForSourceMember(x => x.EntityLabelPlural, opt => opt.Ignore());
+                .ForSourceMember(x => x.DataName, opt => opt.DoNotValidate())
+                .ForSourceMember(x => x.EntityLabel, opt => opt.DoNotValidate())
+                .ForSourceMember(x => x.EntityName, opt => opt.DoNotValidate())
+                .ForSourceMember(x => x.EntityLabelPlural, opt => opt.DoNotValidate());
             CreateMap<DbRecordViewSidebarItemBase, RecordViewSidebarItemBase>()
                 .Include<DbRecordViewSidebarListItem, RecordViewSidebarListItem>()
                 .Include<DbRecordViewSidebarViewItem, RecordViewSidebarViewItem>()
